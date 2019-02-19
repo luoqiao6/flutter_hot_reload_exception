@@ -2,15 +2,4 @@
 
 Request to Dart VM Service timed out
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
-
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+发现一个导致 Flutter 热重载出现 Request to Dart VM Service timed out 异常的问题，就是当 当没有设置childCount 值的 SliverChildBuilderDelegate 在 Column 内时会导致 SliverChildBuilderDelegate 的 builder 调用出现死循环，进而导致页面渲染异常，热重载异常。
